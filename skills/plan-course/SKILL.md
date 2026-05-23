@@ -60,15 +60,36 @@ If `list_competencies` (or a future config-introspection tool) surfaces `academi
 
 If no calendar info is available, ask the teacher: "What's the week numbering convention for this course? (e.g., Weeks 1-35, or numbered per-term)"
 
-### 3. Identify course-level competencies
+### 3. Identify course-level competencies + transfer goals
+
+#### 3a. Competency mapping
 
 Call `list_competencies`. For a year-long course, the typical expectation is that students will encounter and develop **all** of the configured competencies over the year — not just a subset like in a single module or lesson. Different modules emphasize different competencies; together they cover the full framework.
 
-In the preview (step 6), surface this: *"Across the year this course should touch all [N] [framework name] competencies. Different modules will emphasize different ones — I'll suggest the primary 2–4 competencies for each module below."*
+In the preview (step 7), surface this: *"Across the year this course should touch all [N] [framework name] competencies. Different modules will emphasize different ones — I'll suggest the primary 2–4 competencies for each module below."*
 
 If no framework is configured, skip the competency mapping.
 
-### 4. Propose the module sequence
+#### 3b. Transfer goals (UbD course-level)
+
+Beyond competencies, ask the teacher about **transfer goals** — what students should be able to do by the end of the *entire course*, in contexts beyond the classroom. Transfer goals are broader than module-level objectives and longer-lasting than any single unit.
+
+For each course, identify **2–5 transfer goals**. Examples:
+
+- "Apply user research methods to understand a real audience's needs and design accordingly." (a design course)
+- "Use scientific reasoning to evaluate claims about energy systems in everyday life." (a physics course)
+- "Build a sustained creative practice and reflect on one's own process." (an arts course)
+
+Each transfer goal should:
+
+- Start with an action verb
+- Describe something students can do in life, not just on a test
+- Be ambitious but achievable across the year
+- Inform multiple modules' work (not just one)
+
+Show in the preview. Most teachers haven't articulated transfer goals explicitly even if they have them implicitly — this step helps surface them. Don't push if the teacher resists; some courses are happy without an explicit course-level transfer frame.
+
+### 4. Propose the module sequence + throughlines
 
 Generate a list of modules. For each module, include:
 
@@ -78,6 +99,19 @@ Generate a list of modules. For each module, include:
 - **Week range** (e.g., Weeks 1–7)
 - **Primary competencies** (2–4 from the framework)
 - **1-sentence topic / scope summary**
+- **Transfer goal alignment** (which of the course transfer goals from step 3b this module advances — usually 1–2 per module)
+
+#### Identify throughlines (UbD course-level)
+
+After proposing the module sequence, identify the **throughlines** — concepts, skills, or essential questions that recur across multiple modules and build progressively. These are what makes a course feel cohesive rather than like 5 disconnected units.
+
+Examples:
+
+- **A recurring essential question** ("How do designers turn empathy into product?" — visits in Module 1's research lens, Module 3's prototyping, Module 5's showcase)
+- **A skill that builds progressively** (sketching → wireframing → high-fidelity prototyping → user-testing across modules)
+- **A concept that deepens over time** (the design process gets richer with each module's tools)
+
+Surface 2–4 throughlines and show which modules they thread through. Like transfer goals, don't push if the teacher doesn't see them — but most courses have them implicit and surfacing them makes the course design stronger.
 
 Use the Franklin module naming convention for each:
 
@@ -85,35 +119,53 @@ Use the Franklin module naming convention for each:
 Module {N}: {Short Title}: {Subtitle} (Weeks {start}-{end})
 ```
 
-Example proposal:
+Example proposal (with transfer goals + throughlines):
 
 ```
 Course structure proposal — DSGN 9 (Design 9)
 Year-long course, Weeks 1-35
 
+## Transfer Goals
+By the end of this course, students will be able to:
+1. Apply user research methods to understand a real audience's needs and design accordingly
+2. Build a sustained creative practice and reflect on their own process
+3. Communicate design decisions clearly to varied audiences
+
+## Module Sequence
+
 Module 1: User Research: Discovering and Understanding Your Audience (Weeks 1-7)
   • Primary competencies: Empathy/Perspective Taking, Collaboration, Reflexivity
+  • Transfer goals: 1, 2
   • Scope: Interview techniques, observation methods, synthesis, persona-building
 
 Module 2: Ideation & Sketching: Generating Solutions (Weeks 8-14)
   • Primary competencies: Adaptability, Futures Thinking, Storytelling/Communication
+  • Transfer goals: 2, 3
   • Scope: Divergent thinking, structured ideation, rapid sketching, concept selection
 
 Module 3: Prototyping: Making Ideas Tangible (Weeks 15-21)
   • Primary competencies: Knowledge-Based Reasoning, Adaptability, Agency
+  • Transfer goals: 1, 2
   • Scope: Paper prototypes, digital wireframes, physical mockups, testing protocols
 
 Module 4: User Testing & Iteration: Refining the Solution (Weeks 22-28)
   • Primary competencies: Empathy/Perspective Taking, Reflexivity, Systems Thinking
+  • Transfer goals: 1, 2
   • Scope: Test design, observation, feedback synthesis, iteration cycles
 
 Module 5: Communication & Showcase: Presenting Your Work (Weeks 29-35)
   • Primary competencies: Storytelling/Communication, Agency, Reflexivity
+  • Transfer goals: 3, 2
   • Scope: Process documentation, presentation design, final showcase
+
+## Throughlines (concepts/skills that recur)
+1. The design process — visits in every module, gets richer each time
+2. Reflective practice — students journal/reflect at the end of every module
+3. Essential question: "How do designers turn empathy into product?" — recurs across Modules 1, 3, 4, 5
 
 Across the year all 9 Transdisciplinary Competencies are encountered (mapped above).
 
-Sound right? Adjust titles, swap modules, change week ranges, or change competency emphasis before I draft outcomes.
+Sound right? Adjust titles, swap modules, change week ranges, or change competency / transfer-goal emphasis before I draft outcomes.
 ```
 
 Iterate with the teacher until the sequence is locked. Don't move on until they say "looks good" or equivalent.
@@ -126,8 +178,11 @@ For each module in the sequence, draft 4–8 outcome statements following the sa
 - Be observable / measurable
 - Map to the module's primary competencies
 - Reflect the scope of the WHOLE module, not one lesson
+- **When transfer goals are defined (step 3b)**, ensure each module's outcomes contribute to advancing at least one transfer goal — surface that alignment in the preview
 
 This step takes a moment — 5 modules × 6 outcomes = ~30 outcome statements. Power through; the teacher will review them all in the preview.
+
+When the teacher later runs `plan-module` on each module, they can choose the UbD path within that skill to develop the module further (enduring understandings, essential questions, formative + summative assessment plan). The transfer goals and throughlines you identified here give them the bigger-picture frame to work within.
 
 ### 6. Identify foundational pages (optional)
 

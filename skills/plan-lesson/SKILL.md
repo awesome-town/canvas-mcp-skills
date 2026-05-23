@@ -50,7 +50,7 @@ Call `list_page_templates` and find the entry named `lesson`. Read its:
 
 If no `lesson` template exists in the school config, fall back: tell the teacher "no lesson template configured — I'll create a generic page instead" and use `template: "default"` or `template: "none"`. Continue the workflow as best you can.
 
-### 3. Consider competency alignment
+### 3. Consider competency + module alignment
 
 Call `list_competencies`. If a framework is configured (e.g., Franklin's TD Competencies, or another school's framework), **always** spend a moment thinking about which 1–3 competencies this lesson naturally targets. Don't skip this just because the teacher didn't bring it up — most lessons have a clear competency frame, and surfacing it makes the page genuinely more useful.
 
@@ -58,9 +58,17 @@ This is a *thinking* step, not a content step (yet). You're using the competency
 
 Pick 1–3 competencies, not all 9. The alignment is meaningful only if the lesson genuinely targets them. Don't shoehorn.
 
-In step 6 (preview), you'll surface the suggested alignment to the teacher and ask whether to call it out explicitly in the lesson. Most teachers want the alignment visible to students; some prefer keeping it woven into the content without explicit labels.
+**If the teacher is working from a module-level unit plan** (e.g., they ran `plan-module` with the backwards-design path, or shared a UbD-style unit plan), look for the lesson's connection to that bigger picture:
 
-If `list_competencies` returns `configured: false` (no framework set), skip this step entirely.
+- **Which essential question does this lesson advance?** A lesson should help students wrestle with at least one of the module's open-ended inquiry questions.
+- **Which enduring understanding does it build toward?** Lessons accumulate toward the module's big-idea takeaways — name which one(s).
+- **Which content + skill objectives is it teaching toward?** Often 1–3 per lesson, not all of them.
+
+Ask the teacher: *"Is this lesson part of a module you've already designed? If so, which essential question / enduring understanding does it advance?"* If they have that context, fold it into the `to` slot framing (e.g., `<p>Through this lesson, students explore the question: "How do natural systems organize across landscapes?"</p>` followed by the can-do statements). If they don't have a unit plan, that's fine — skip this and use just the competency framing.
+
+In step 6 (preview), surface the suggested competency alignment AND any unit-plan connections you noted. Ask whether to call them out explicitly in the lesson or keep them woven into the content.
+
+If `list_competencies` returns `configured: false` (no framework set), still ask about unit-plan context — competencies and unit plans are separate concerns.
 
 ### 4. Generate content for each slot
 
