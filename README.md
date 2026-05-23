@@ -39,10 +39,11 @@ Restart Claude Desktop. The skill becomes active.
 | [`plan-course`](skills/plan-course/) | Plan an entire Canvas course's structure: a sequence of modules across the academic calendar, each module's Outcomes page drafted, with optional foundational pages (Start Here, More Resources). Defers lesson + assessment drafting to follow-up `plan-module` runs. Requires canvas-mcp v0.3.12+. | "plan a course", "scaffold a course", "set up the course structure", "outline a year of curriculum" |
 | [`grade-submissions`](skills/grade-submissions/) | Grade every submission for a Canvas assignment. Drafts scores + feedback, presents a review table, dry-runs before writing. Handles text entries, Google Docs/Slides (via Claude Drive MCP), file uploads (notebooks, PDFs, code, images). Rubric-aware. | "grade submissions", "grade this assignment", "score student work" |
 | [`create-quiz`](skills/create-quiz/) | Build a Canvas Quiz (the actual graded object with questions) from a Canvas page, PDF, Google Doc, or pasted text. Generates AI-drafted questions with mandatory source-quote citations OR extracts existing ones from a pre-written quiz doc. Teacher reviews and edits before the quiz is created. Composes with `plan-assessment` for quiz-style assessments. Classic Quizzes only. | "create a quiz", "make a quiz", "build a Canvas quiz", "convert this quiz to Canvas" |
+| [`setup-rubric`](skills/setup-rubric/) | Set up a Canvas rubric for an assessment by reusing an existing one (default), adapting an existing one, or creating a new one from scratch. Reuse-first by design since most courses have rubrics applied to multiple assignments. Composes with `plan-assessment` (for criteria source) and `grade-submissions` (which grades per-criterion when a rubric is attached). Requires canvas-mcp v0.3.13+. | "add a rubric", "create a rubric", "set up a rubric", "use the [name] rubric for X" |
 
 ### Roadmap
 
-- `create-rubric` — generate a Canvas rubric from criteria + competency framework, associate with one or more assignments.
+(All originally-planned skills are now built. New skills will land here as new workflows surface.)
 
 ### Skill design principles
 
